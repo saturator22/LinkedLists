@@ -48,5 +48,6 @@ public class SinglyLinkedTests {
 
         assertEquals(4, singlyLinkedList.getSize());
         assertEquals("third", singlyLinkedList.getNode(2).getData());
+        assertThrows(IllegalArgumentException.class, () -> singlyLinkedList.insert(testNode, -1));
     }
 }
