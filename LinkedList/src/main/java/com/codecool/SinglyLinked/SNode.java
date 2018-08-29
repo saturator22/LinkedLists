@@ -1,29 +1,29 @@
 package com.codecool.SinglyLinked;
 
-public class SNode {
-    Object data;
-    SNode next;
+public class SNode<T> {
+    T data;
+    SNode<T> next;
 
     public SNode() {
     }
 
-    public SNode(Object data) {
+    public SNode(T data) {
         this.data = data;
     }
 
-    public Object getData() {
-        return data;
+    public T getData() {
+        return this.data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 
-    public SNode getNext() {
+    public SNode<T> getNext() {
         return next;
     }
 
-    public void setNext(SNode next) {
+    public void setNext(SNode<T> next) {
         this.next = next;
     }
 }
