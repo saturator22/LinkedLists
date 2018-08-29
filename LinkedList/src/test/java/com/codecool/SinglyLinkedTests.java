@@ -46,8 +46,27 @@ public class SinglyLinkedTests {
         singlyLinkedList.insert(testNode2, 2);
         singlyLinkedList.insert(testNode3, 2);
 
-        assertEquals(4, singlyLinkedList.getSize());
         assertEquals("third", singlyLinkedList.getNode(2).getData());
         assertThrows(IllegalArgumentException.class, () -> singlyLinkedList.insert(testNode, -1));
+    }
+
+    @Test
+    public void testLast() {
+        SNode testNode = new SNode("first");
+        SNode testNode2 = new SNode("second");
+        SNode testNode3 = new SNode("third");
+
+        singlyLinkedList.append(testNode);
+        singlyLinkedList.append(testNode3);
+        singlyLinkedList.append(testNode2);
+
+        assertEquals(testNode2, singlyLinkedList.getLast());
+    }
+
+    @Test
+    public void testSize() {
+        singlyLinkedList.append(new SNode<>("KSZKS"));
+
+        assertEquals(2, singlyLinkedList.getSize());
     }
 }

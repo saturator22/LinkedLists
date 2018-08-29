@@ -20,7 +20,7 @@ public class SinglyLinkedList<T> {
             getLast().setNext(node);
             setLast(node);
         }
-        size++;
+        this.size++;
     }
 
     public void insert(SNode<T> node, int index) {
