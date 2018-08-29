@@ -12,6 +12,33 @@ public class SinglyLinkedList<T> {
         this.size = 0;
     }
 
+//    Removes first node of the list
+    public void remove() {
+        SNode temp = this.head.getNext();
+        this.head = temp;
+        this.size--;
+    }
+
+    public void remove(int index) {
+        if (index >= size || index < 0) {
+            throw new IllegalArgumentException("Index is bigger than list length or lower than 0");
+        } else if(index == 0) {
+            remove();
+            this.size++;
+        } else if(index == size - 1) {
+            SNode newLast = getNode(index - 1);
+            newLast.setNext(null);
+            setLast(newLast);
+        } else {
+            SNode beforeToRemove = getNode(index - 1);
+            SNode toRemove = beforeToRemove.getNext();
+            SNode toRemoveTail = toRemove.getNext();
+
+            beforeToRemove.setNext(toRemoveTail);
+        }
+        this.size--;
+    }
+
     public void append(SNode<T> node) {
         if(size == 0) {
             setHead(node);
