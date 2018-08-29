@@ -19,11 +19,8 @@ public class SinglyLinkedTests {
 
     @Test
     public void testHead() {
-        SNode<String> nod = singlyLinkedList.getHead();
-
-        String data = nod.getData();
-
         String nodeData = singlyLinkedList.getHead().getData();
+
         assertEquals("ELO", nodeData);
     }
 
